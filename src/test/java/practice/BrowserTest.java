@@ -9,6 +9,9 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 @Log4j
 public class BrowserTest {
 
@@ -17,6 +20,7 @@ public class BrowserTest {
     @BeforeTest
     public void setProperties() {
         System.setProperty(ChromeDriverService.CHROME_DRIVER_SILENT_OUTPUT_PROPERTY, "true");
+        Logger.getLogger("org.openqa.selenium").setLevel(Level.OFF);
     }
 
     @BeforeMethod(alwaysRun = true)
